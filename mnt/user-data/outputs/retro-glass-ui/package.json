@@ -1,0 +1,28 @@
+{
+  "name": "retro-glass-ui",
+  "version": "1.0.0",
+  "description": "Retro-futuristic UI component library with liquid glass glassmorphism effects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "ui",
+    "components",
+    "glassmorphism",
+    "retro",
+    "futuristic"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
