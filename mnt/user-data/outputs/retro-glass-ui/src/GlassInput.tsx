@@ -38,11 +38,11 @@ export const GlassInput: React.FC<GlassInputProps> = ({
     color: '#FFFFFF',
     outline: 'none',
     transition: 'all 0.3s ease',
-    border: error 
-      ? '2px solid #e94560' 
+    border: error
+      ? '2px solid #e94560'
       : typeof themeColor === 'string'
-      ? `2px solid ${themeColor}40`
-      : '2px solid rgba(255, 255, 255, 0.15)',
+        ? `2px solid ${themeColor}40`
+        : '2px solid rgba(255, 255, 255, 0.15)',
     WebkitBackdropFilter: glassStyle.backdropFilter,
     fontFamily: 'Arial, sans-serif',
     ...style,
@@ -68,11 +68,7 @@ export const GlassInput: React.FC<GlassInputProps> = ({
     <div style={containerStyle}>
       <div style={{ position: 'relative' }}>
         {icon && <div style={iconStyle}>{icon}</div>}
-        <input
-          className={className}
-          style={inputStyle}
-          {...inputProps}
-        />
+        <input className={className} style={inputStyle} {...inputProps} />
       </div>
       {error && <div style={errorStyle}>{error}</div>}
     </div>

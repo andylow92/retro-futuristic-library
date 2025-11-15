@@ -1,6 +1,12 @@
 import React, { useState, CSSProperties } from 'react';
 import { ButtonProps } from './types';
-import { getGlassStyle, getThemeColor, generateGlowStyle, getSizeStyles, dotsPatternCSS } from './utils';
+import {
+  getGlassStyle,
+  getThemeColor,
+  generateGlowStyle,
+  getSizeStyles,
+  dotsPatternCSS,
+} from './utils';
 
 export const GlassButton: React.FC<ButtonProps> = ({
   children,
@@ -22,7 +28,10 @@ export const GlassButton: React.FC<ButtonProps> = ({
   const glassStyle = getGlassStyle(variant);
   const themeColor = getThemeColor(theme);
   const sizeStyles = getSizeStyles(size);
-  const glowStyle = glowEffect && !disabled ? generateGlowStyle(typeof themeColor === 'string' ? themeColor : '#e94560') : {};
+  const glowStyle =
+    glowEffect && !disabled
+      ? generateGlowStyle(typeof themeColor === 'string' ? themeColor : '#e94560')
+      : {};
 
   const buttonStyle: CSSProperties = {
     position: 'relative',

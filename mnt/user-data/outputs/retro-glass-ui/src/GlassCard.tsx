@@ -20,9 +20,8 @@ export const GlassCard: React.FC<CardProps> = ({
 
   const glassStyle = getGlassStyle(variant);
   const themeColor = getThemeColor(theme);
-  const neonStyle = neonBorder && typeof themeColor === 'string'
-    ? generateNeonBorderStyle(themeColor)
-    : {};
+  const neonStyle =
+    neonBorder && typeof themeColor === 'string' ? generateNeonBorderStyle(themeColor) : {};
 
   const cardStyle: CSSProperties = {
     position: 'relative',

@@ -15,17 +15,13 @@ describe('GlassBadge', () => {
   });
 
   it('should apply custom className', () => {
-    const { container } = render(
-      <GlassBadge className="custom-class">Badge</GlassBadge>
-    );
+    const { container } = render(<GlassBadge className="custom-class">Badge</GlassBadge>);
     const badge = container.querySelector('span');
     expect(badge).toHaveClass('custom-class');
   });
 
   it('should apply custom styles', () => {
-    const { container } = render(
-      <GlassBadge style={{ marginTop: '20px' }}>Badge</GlassBadge>
-    );
+    const { container } = render(<GlassBadge style={{ marginTop: '20px' }}>Badge</GlassBadge>);
     const badge = container.querySelector('span');
     expect(badge).toHaveStyle({ marginTop: '20px' });
   });

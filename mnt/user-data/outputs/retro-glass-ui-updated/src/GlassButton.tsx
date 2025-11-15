@@ -1,6 +1,12 @@
 import React, { useState, CSSProperties } from 'react';
 import { ButtonProps } from './types';
-import { getGlassStyle, getThemeColor, generateGlowStyle, getSizeStyles, dotsPatternCSS } from './utils';
+import {
+  getGlassStyle,
+  getThemeColor,
+  generateGlowStyle,
+  getSizeStyles,
+  dotsPatternCSS,
+} from './utils';
 
 export const GlassButton: React.FC<ButtonProps> = ({
   children,
@@ -22,7 +28,7 @@ export const GlassButton: React.FC<ButtonProps> = ({
   const glassStyle = getGlassStyle(variant);
   const themeColor = getThemeColor(theme);
   const sizeStyles = getSizeStyles(size);
-  
+
   // Retro sizes with more padding
   const retroSizes = {
     sm: { padding: '10px 20px', fontSize: '14px' },
@@ -53,7 +59,7 @@ export const GlassButton: React.FC<ButtonProps> = ({
     letterSpacing: '2px',
     textTransform: 'uppercase',
     WebkitBackdropFilter: glassStyle.backdropFilter,
-    boxShadow: isPressed 
+    boxShadow: isPressed
       ? `inset 0 0 20px ${typeof themeColor === 'string' ? themeColor + '40' : '#e9456040'}`
       : `6px 6px 0px rgba(0,0,0,0.8), 0 0 30px ${typeof themeColor === 'string' ? themeColor + '60' : '#e9456060'}, inset 0 0 20px ${typeof themeColor === 'string' ? themeColor + '20' : '#e9456020'}`,
     textShadow: `3px 3px 0px rgba(0,0,0,0.9), 0 0 20px ${typeof themeColor === 'string' ? themeColor : '#e94560'}`,

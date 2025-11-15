@@ -144,7 +144,7 @@ describe('scanlinesCSS', () => {
 
   it('should include correct gradient parameters', () => {
     expect(scanlinesCSS).toContain('0deg');
-    expect(scanlinesCSS).toContain('rgba(0, 0, 0, 0.15)');
+    expect(scanlinesCSS).toContain('rgba(0, 0, 0, 0.3)');
     expect(scanlinesCSS).toContain('transparent');
   });
 });

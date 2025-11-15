@@ -11,16 +11,12 @@ describe('GlassCard', () => {
   });
 
   it('should apply custom className', () => {
-    const { container } = render(
-      <GlassCard className="custom-class">Content</GlassCard>
-    );
+    const { container } = render(<GlassCard className="custom-class">Content</GlassCard>);
     expect(container.firstChild).toHaveClass('custom-class');
   });
 
   it('should apply custom styles', () => {
-    const { container } = render(
-      <GlassCard style={{ marginTop: '20px' }}>Content</GlassCard>
-    );
+    const { container } = render(<GlassCard style={{ marginTop: '20px' }}>Content</GlassCard>);
     expect(container.firstChild).toHaveStyle({ marginTop: '20px' });
   });
 
@@ -55,9 +51,7 @@ describe('GlassCard', () => {
 
   describe('Variants', () => {
     it('should render with light variant', () => {
-      const { container } = render(
-        <GlassCard variant="light">Content</GlassCard>
-      );
+      const { container } = render(<GlassCard variant="light">Content</GlassCard>);
       expect(container.firstChild).toBeInTheDocument();
     });
 
@@ -67,16 +61,12 @@ describe('GlassCard', () => {
     });
 
     it('should render with heavy variant', () => {
-      const { container } = render(
-        <GlassCard variant="heavy">Content</GlassCard>
-      );
+      const { container } = render(<GlassCard variant="heavy">Content</GlassCard>);
       expect(container.firstChild).toBeInTheDocument();
     });
 
     it('should render with neon variant', () => {
-      const { container } = render(
-        <GlassCard variant="neon">Content</GlassCard>
-      );
+      const { container } = render(<GlassCard variant="neon">Content</GlassCard>);
       expect(container.firstChild).toBeInTheDocument();
     });
   });
@@ -98,9 +88,7 @@ describe('GlassCard', () => {
     });
 
     it('should render with purple theme', () => {
-      const { container } = render(
-        <GlassCard theme="purple">Content</GlassCard>
-      );
+      const { container } = render(<GlassCard theme="purple">Content</GlassCard>);
       expect(container.firstChild).toBeInTheDocument();
     });
   });
@@ -203,9 +191,7 @@ describe('GlassCard', () => {
     });
 
     it('should render without glow effect when glowEffect is false', () => {
-      const { container } = render(
-        <GlassCard glowEffect={false}>Content</GlassCard>
-      );
+      const { container } = render(<GlassCard glowEffect={false}>Content</GlassCard>);
       expect(container.firstChild).toBeInTheDocument();
     });
   });

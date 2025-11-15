@@ -2,6 +2,23 @@ import React, { useState, CSSProperties } from 'react';
 import { CardProps } from './types';
 import { getGlassStyle, getThemeColor, generateNeonBorderStyle } from './utils';
 
+/**
+ * GlassCard Component
+ *
+ * A content card with glassmorphism effects, optional title/subtitle, and hover animations.
+ * Supports scanlines, dots pattern, and neon border effects for retro aesthetics.
+ *
+ * @example
+ * ```tsx
+ * <GlassCard title="Features" subtitle="Retro UI" theme="gradient">
+ *   <p>Beautiful glassmorphism effects</p>
+ * </GlassCard>
+ *
+ * <GlassCard neonBorder scanlines theme="cyan" hover>
+ *   Content here
+ * </GlassCard>
+ * ```
+ */
 export const GlassCard: React.FC<CardProps> = ({
   children,
   className = '',
@@ -30,13 +47,15 @@ export const GlassCard: React.FC<CardProps> = ({
     transition: 'all 0.15s ease',
     transform: hover && isHovered ? 'translate(-4px, -4px)' : 'translate(0, 0)',
     WebkitBackdropFilter: glassStyle.backdropFilter,
-    border: neonBorder && typeof themeColor === 'string' 
-      ? `5px solid ${themeColor}` 
-      : '5px solid rgba(255,255,255,0.3)',
+    border:
+      neonBorder && typeof themeColor === 'string'
+        ? `5px solid ${themeColor}`
+        : '5px solid rgba(255,255,255,0.3)',
     boxShadow: isHovered
       ? `8px 8px 0px rgba(0,0,0,0.9), 0 0 40px ${typeof themeColor === 'string' ? themeColor + '80' : '#e9456080'}, inset 0 0 30px ${typeof themeColor === 'string' ? themeColor + '30' : '#e9456030'}`
       : `6px 6px 0px rgba(0,0,0,0.8), 0 0 30px ${typeof themeColor === 'string' ? themeColor + '60' : '#e9456060'}, inset 0 0 20px ${typeof themeColor === 'string' ? themeColor + '20' : '#e9456020'}`,
-    backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 2px, transparent 2px)',
+    backgroundImage:
+      'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 2px, transparent 2px)',
     backgroundSize: '12px 12px',
     ...style,
   };

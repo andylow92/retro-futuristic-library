@@ -2,6 +2,23 @@ import React, { CSSProperties } from 'react';
 import { PanelProps } from './types';
 import { getGlassStyle, chromeTextCSS } from './utils';
 
+/**
+ * GlassPanel Component
+ *
+ * A sectioned panel component with optional header and footer.
+ * Features heavy glassmorphism and optional scanlines for retro aesthetics.
+ *
+ * @example
+ * ```tsx
+ * <GlassPanel
+ *   header="Settings"
+ *   footer="Last updated: Today"
+ *   scanlines
+ * >
+ *   Panel content here
+ * </GlassPanel>
+ * ```
+ */
 export const GlassPanel: React.FC<PanelProps> = ({
   children,
   className = '',
