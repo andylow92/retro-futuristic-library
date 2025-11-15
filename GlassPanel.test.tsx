@@ -10,16 +10,12 @@ describe('GlassPanel', () => {
   });
 
   it('should apply custom className', () => {
-    const { container } = render(
-      <GlassPanel className="custom-class">Content</GlassPanel>
-    );
+    const { container } = render(<GlassPanel className="custom-class">Content</GlassPanel>);
     expect(container.firstChild).toHaveClass('custom-class');
   });
 
   it('should apply custom styles', () => {
-    const { container } = render(
-      <GlassPanel style={{ marginTop: '20px' }}>Content</GlassPanel>
-    );
+    const { container } = render(<GlassPanel style={{ marginTop: '20px' }}>Content</GlassPanel>);
     expect(container.firstChild).toHaveStyle({ marginTop: '20px' });
   });
 
@@ -111,9 +107,7 @@ describe('GlassPanel', () => {
     });
 
     it('should not have border when bordered is false', () => {
-      const { container } = render(
-        <GlassPanel bordered={false}>Content</GlassPanel>
-      );
+      const { container } = render(<GlassPanel bordered={false}>Content</GlassPanel>);
       const panel = container.firstChild as HTMLElement;
       // Check that component renders without throwing error
       // Border none might be converted to 'medium' or empty by jsdom/React

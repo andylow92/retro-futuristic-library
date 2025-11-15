@@ -10,9 +10,7 @@ describe('GlassContainer', () => {
   });
 
   it('should apply custom className', () => {
-    const { container } = render(
-      <GlassContainer className="custom-class">Content</GlassContainer>
-    );
+    const { container } = render(<GlassContainer className="custom-class">Content</GlassContainer>);
     expect(container.firstChild).toHaveClass('custom-class');
   });
 
@@ -32,36 +30,28 @@ describe('GlassContainer', () => {
     });
 
     it('should have sm max width when specified', () => {
-      const { container } = render(
-        <GlassContainer maxWidth="sm">Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer maxWidth="sm">Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       const contentDiv = wrapper.children[1] as HTMLElement;
       expect(contentDiv).toHaveStyle({ maxWidth: '640px' });
     });
 
     it('should have md max width when specified', () => {
-      const { container } = render(
-        <GlassContainer maxWidth="md">Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer maxWidth="md">Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       const contentDiv = wrapper.children[1] as HTMLElement;
       expect(contentDiv).toHaveStyle({ maxWidth: '768px' });
     });
 
     it('should have xl max width when specified', () => {
-      const { container } = render(
-        <GlassContainer maxWidth="xl">Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer maxWidth="xl">Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       const contentDiv = wrapper.children[1] as HTMLElement;
       expect(contentDiv).toHaveStyle({ maxWidth: '1280px' });
     });
 
     it('should have full max width when specified', () => {
-      const { container } = render(
-        <GlassContainer maxWidth="full">Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer maxWidth="full">Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       const contentDiv = wrapper.children[1] as HTMLElement;
       expect(contentDiv).toHaveStyle({ maxWidth: '100%' });
@@ -77,9 +67,7 @@ describe('GlassContainer', () => {
     });
 
     it('should not be centered when centered is false', () => {
-      const { container } = render(
-        <GlassContainer centered={false}>Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer centered={false}>Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       const contentDiv = wrapper.children[1] as HTMLElement;
       expect(contentDiv).toHaveStyle({ margin: '0' });
@@ -95,24 +83,18 @@ describe('GlassContainer', () => {
     });
 
     it('should have dark background when specified', () => {
-      const { container } = render(
-        <GlassContainer background="dark">Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer background="dark">Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       expect(wrapper).toHaveStyle({
-        background:
-          'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
       });
     });
 
     it('should have deep background when specified', () => {
-      const { container } = render(
-        <GlassContainer background="deep">Content</GlassContainer>
-      );
+      const { container } = render(<GlassContainer background="deep">Content</GlassContainer>);
       const wrapper = container.firstChild as HTMLElement;
       expect(wrapper).toHaveStyle({
-        background:
-          'linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%)',
+        background: 'linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%)',
       });
     });
   });

@@ -27,15 +27,18 @@ export const GlassBadge: React.FC<BadgeProps> = ({
     color: '#FFFFFF',
     letterSpacing: '0.5px',
     WebkitBackdropFilter: glassStyle.backdropFilter,
-    background: typeof themeColor === 'string' 
-      ? `${themeColor}20` 
-      : 'linear-gradient(90deg, #e9456020, #ffb86c20, #82ccdd20, #a29bfe20)',
-    border: typeof themeColor === 'string'
-      ? `2px solid ${themeColor}40`
-      : '2px solid rgba(255, 255, 255, 0.2)',
-    boxShadow: typeof themeColor === 'string'
-      ? `0 0 15px ${themeColor}30, inset 0 0 15px ${themeColor}10`
-      : '0 0 15px rgba(255, 255, 255, 0.2)',
+    background:
+      typeof themeColor === 'string'
+        ? `${themeColor}20`
+        : 'linear-gradient(90deg, #e9456020, #ffb86c20, #82ccdd20, #a29bfe20)',
+    border:
+      typeof themeColor === 'string'
+        ? `2px solid ${themeColor}40`
+        : '2px solid rgba(255, 255, 255, 0.2)',
+    boxShadow:
+      typeof themeColor === 'string'
+        ? `0 0 15px ${themeColor}30, inset 0 0 15px ${themeColor}10`
+        : '0 0 15px rgba(255, 255, 255, 0.2)',
     animation: pulse ? 'badgePulse 2s ease-in-out infinite' : 'none',
     ...style,
   };

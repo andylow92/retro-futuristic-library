@@ -2,14 +2,44 @@ import React, { CSSProperties, InputHTMLAttributes } from 'react';
 import { GlassVariant, ColorTheme } from './types';
 import { getGlassStyle, getThemeColor } from './utils';
 
+/**
+ * Props for the GlassInput component
+ */
 interface GlassInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+  /** Glass morphism variant */
   variant?: GlassVariant;
+  /** Color theme */
   theme?: ColorTheme;
+  /** Whether input should take full width */
   fullWidth?: boolean;
+  /** Optional icon to display on the left */
   icon?: React.ReactNode;
+  /** Error message to display below the input */
   error?: string;
 }
 
+/**
+ * GlassInput Component
+ *
+ * A form input with glassmorphism styling, optional icon, and error state.
+ * Supports all standard HTML input attributes.
+ *
+ * @example
+ * ```tsx
+ * <GlassInput
+ *   placeholder="Enter email"
+ *   type="email"
+ *   icon={<MailIcon />}
+ *   fullWidth
+ * />
+ *
+ * <GlassInput
+ *   placeholder="Password"
+ *   type="password"
+ *   error="Password is required"
+ * />
+ * ```
+ */
 export const GlassInput: React.FC<GlassInputProps> = ({
   className = '',
   style = {},
@@ -38,11 +68,11 @@ export const GlassInput: React.FC<GlassInputProps> = ({
     color: '#FFFFFF',
     outline: 'none',
     transition: 'all 0.3s ease',
-    border: error 
-      ? '2px solid #e94560' 
+    border: error
+      ? '2px solid #e94560'
       : typeof themeColor === 'string'
-      ? `2px solid ${themeColor}40`
-      : '2px solid rgba(255, 255, 255, 0.15)',
+        ? `2px solid ${themeColor}40`
+        : '2px solid rgba(255, 255, 255, 0.15)',
     WebkitBackdropFilter: glassStyle.backdropFilter,
     fontFamily: 'Arial, sans-serif',
     ...style,
@@ -68,11 +98,7 @@ export const GlassInput: React.FC<GlassInputProps> = ({
     <div style={containerStyle}>
       <div style={{ position: 'relative' }}>
         {icon && <div style={iconStyle}>{icon}</div>}
-        <input
-          className={className}
-          style={inputStyle}
-          {...inputProps}
-        />
+        <input className={className} style={inputStyle} {...inputProps} />
       </div>
       {error && <div style={errorStyle}>{error}</div>}
     </div>

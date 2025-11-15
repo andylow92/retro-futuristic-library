@@ -1,12 +1,32 @@
 import React, { CSSProperties } from 'react';
 import { BaseGlassProps } from './types';
 
+/**
+ * Props for the GlassContainer component
+ */
 interface GlassContainerProps extends BaseGlassProps {
+  /** Maximum width of the container */
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  /** Whether to center the container horizontally */
   centered?: boolean;
+  /** Background gradient style */
   background?: 'dark' | 'gradient' | 'deep';
 }
 
+/**
+ * GlassContainer Component
+ *
+ * A full-height layout container with retro grid background and gradient effects.
+ * Perfect for wrapping page content with consistent styling.
+ *
+ * @example
+ * ```tsx
+ * <GlassContainer maxWidth="lg" background="gradient">
+ *   <h1>Welcome</h1>
+ *   <p>Your app content</p>
+ * </GlassContainer>
+ * ```
+ */
 export const GlassContainer: React.FC<GlassContainerProps> = ({
   children,
   className = '',
@@ -25,7 +45,8 @@ export const GlassContainer: React.FC<GlassContainerProps> = ({
 
   const backgrounds = {
     dark: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-    gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #1a1a2e 100%)',
+    gradient:
+      'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #1a1a2e 100%)',
     deep: 'linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%)',
   };
 

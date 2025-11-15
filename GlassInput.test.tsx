@@ -124,14 +124,7 @@ describe('GlassInput', () => {
 
   describe('Input props', () => {
     it('should accept and apply standard input props', () => {
-      render(
-        <GlassInput
-          placeholder="Enter text"
-          type="text"
-          name="testInput"
-          id="test-input"
-        />
-      );
+      render(<GlassInput placeholder="Enter text" type="text" name="testInput" id="test-input" />);
       const input = screen.getByRole('textbox') as HTMLInputElement;
 
       expect(input).toHaveAttribute('placeholder', 'Enter text');

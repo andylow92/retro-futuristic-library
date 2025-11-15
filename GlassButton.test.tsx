@@ -17,9 +17,7 @@ describe('GlassButton', () => {
   });
 
   it('should apply custom styles', () => {
-    render(
-      <GlassButton style={{ marginTop: '20px' }}>Button</GlassButton>
-    );
+    render(<GlassButton style={{ marginTop: '20px' }}>Button</GlassButton>);
     const button = screen.getByRole('button');
     expect(button).toHaveStyle({ marginTop: '20px' });
   });
@@ -215,10 +213,7 @@ describe('GlassButton', () => {
       const button = screen.getByRole('button');
 
       // Press and release
-      await user.pointer([
-        { keys: '[MouseLeft>]', target: button },
-        { keys: '[/MouseLeft]' },
-      ]);
+      await user.pointer([{ keys: '[MouseLeft>]', target: button }, { keys: '[/MouseLeft]' }]);
 
       expect(button).toHaveStyle({ transform: 'translate(0, 0)' });
     });
@@ -229,10 +224,7 @@ describe('GlassButton', () => {
       const button = screen.getByRole('button');
 
       // Press and leave
-      await user.pointer([
-        { keys: '[MouseLeft>]', target: button },
-        { target: document.body },
-      ]);
+      await user.pointer([{ keys: '[MouseLeft>]', target: button }, { target: document.body }]);
 
       expect(button).toHaveStyle({ transform: 'translate(0, 0)' });
     });
