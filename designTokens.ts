@@ -127,6 +127,10 @@ export const BADGE_SIZE_VARIANTS = {
     padding: '8px 20px',
     fontSize: FONT_SIZE.md,
   },
+  xl: {
+    padding: '10px 24px',
+    fontSize: FONT_SIZE.lg,
+  },
 } as const;
 
 /**
